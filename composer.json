@@ -27,7 +27,7 @@
                 "JuniorFontenele\\LaravelAppContext\\LaravelAppContextServiceProvider"
             ],
             "aliases": {
-                "LaravelAppContext": "JuniorFontenele\\LaravelAppContext\\Facades\\LaravelAppContext"
+                "AppContext": "JuniorFontenele\\LaravelAppContext\\Facades\\AppContext"
             },
             "branch-alias": {
                 "dev-main": "1.x-dev",
