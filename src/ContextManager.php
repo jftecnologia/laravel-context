@@ -51,13 +51,9 @@ class ContextManager
     {
         foreach ($this->providers as $provider) {
             if ($provider->shouldRun()) {
-                $resolvedContext = array_map(function ($value) {
-                    return is_callable($value) ? $value() : $value;
-                }, $provider->getContext());
-
                 $this->context = array_merge(
                     $this->context,
-                    $resolvedContext
+                    $provider->getContext()
                 );
             }
         }
