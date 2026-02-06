@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "juniorfontenele/laravel-app-context",
+    "name": "jftecnologia/laravel-app-context",
     "description": "Context on steroids for Laravel applications",
-    "homepage": "https://github.com/juniorfontenele/laravel-app-context",
+    "homepage": "https://github.com/jftecnologia/laravel-app-context",
     "type": "library",
     "license": "MIT",
     "autoload": {
