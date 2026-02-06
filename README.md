@@ -559,7 +559,6 @@ composer test
 ## Credits
 
 - [Junior Fontenele](https://github.com/juniorfontenele)
-- [JF Tecnologia](https://github.com/jftecnologia)
 - [All Contributors](../../contributors)
 
 ## License
