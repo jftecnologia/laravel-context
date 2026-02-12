@@ -17,11 +17,11 @@ class LaravelAppContextServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/app-context.php' => config_path('app-context.php'),
+                __DIR__ . '/../config/laravel-app-context.php' => config_path('laravel-app-context.php'),
             ], 'laravel-app-context-config');
         }
 
-        if (config('app-context.enabled', true)) {
+        if (config('laravel-app-context.enabled', true)) {
             $contextManager = $this->app->make(ContextManager::class);
 
             $contextManager->build();
@@ -35,10 +35,10 @@ class LaravelAppContextServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/app-context.php', 'app-context');
+        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-app-context.php', 'laravel-app-context');
 
         $this->app->singleton(ContextManager::class, function ($app): ContextManager {
-            $config = $app['config']->get('app-context');
+            $config = $app['config']->get('laravel-app-context');
 
             $contextManager = new ContextManager();
 
@@ -53,6 +53,6 @@ class LaravelAppContextServiceProvider extends ServiceProvider
             return $contextManager;
         });
 
-        $this->app->alias(ContextManager::class, 'app-context');
+        $this->app->alias(ContextManager::class, 'laravel-app-context');
     }
 }

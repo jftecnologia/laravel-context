@@ -7,7 +7,7 @@ use JuniorFontenele\LaravelAppContext\ContextManager;
 describe('LaravelAppContextServiceProvider', function () {
     it('registers the ContextManager in the container', function () {
         expect(app()->bound(ContextManager::class))->toBeTrue();
-        expect(app()->bound('app-context'))->toBeTrue();
+        expect(app()->bound('laravel-app-context'))->toBeTrue();
     });
 
     it('resolves ContextManager from container', function () {
@@ -17,20 +17,20 @@ describe('LaravelAppContextServiceProvider', function () {
     });
 
     it('resolves ContextManager using alias', function () {
-        $manager = app('app-context');
+        $manager = app('laravel-app-context');
 
         expect($manager)->toBeInstanceOf(ContextManager::class);
     });
 
     it('merges config from package', function () {
-        expect(config('app-context'))->toBeArray();
-        expect(config('app-context'))->toHaveKey('enabled');
-        expect(config('app-context'))->toHaveKey('providers');
-        expect(config('app-context'))->toHaveKey('channels');
+        expect(config('laravel-app-context'))->toBeArray();
+        expect(config('laravel-app-context'))->toHaveKey('enabled');
+        expect(config('laravel-app-context'))->toHaveKey('providers');
+        expect(config('laravel-app-context'))->toHaveKey('channels');
     });
 
     it('loads default providers configuration', function () {
-        $providers = config('app-context.providers');
+        $providers = config('laravel-app-context.providers');
 
         expect($providers)->toBeArray();
         expect($providers)->not()->toBeEmpty();
@@ -40,7 +40,7 @@ describe('LaravelAppContextServiceProvider', function () {
     });
 
     it('loads default channels configuration', function () {
-        $channels = config('app-context.channels');
+        $channels = config('laravel-app-context.channels');
 
         expect($channels)->toBeArray();
         expect($channels)->not()->toBeEmpty();

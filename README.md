@@ -36,7 +36,7 @@ Publish the configuration file:
 php artisan vendor:publish --tag="laravel-app-context-config"
 ```
 
-This will create a `config/app-context.php` file with the following structure:
+This will create a `config/laravel-app-context.php` file with the following structure:
 
 ```php
 return [
@@ -309,7 +309,7 @@ class DatabaseProvider extends AbstractProvider
 
 ### Registering Custom Providers
 
-Add your custom provider to the `config/app-context.php` file:
+Add your custom provider to the `config/laravel-app-context.php` file:
 
 ```php
 'providers' => [
@@ -394,7 +394,7 @@ class SentryChannel implements ContextChannel
 
 ### Registering Custom Channels
 
-Add your custom channel to the `config/app-context.php` file:
+Add your custom channel to the `config/laravel-app-context.php` file:
 
 ```php
 'channels' => [
